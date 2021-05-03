@@ -1,0 +1,40 @@
+h1 {text-align: center;
+    font-size: 40px;}
+  
+p {text-align: center;
+    color: rgb(223, 232, 241);
+    border: 3px rgb(247, 243, 22);
+    font-size: 30px;
+  }
+div {text-align: center;}
+    body {
+    background-color: rgb(88, 96, 99); 
+    
+  }
+nav ul li a{
+    text-decoration: none;
+    font-size: 40;
+  
+  }
+li{
+  font-size: 30px;
+  padding: 20px;
+  }
+nav {
+    text-align: center; 
+  }
+li a:hover{
+    background-color: #111
+  }
+nav ul li {
+    display: inline;
+   border: 1px solid rgb(12, 235, 112);
+  
+  }
+ul{
+    margin: 0;
+   padding: 0;
+   list-style-type: none;
+   overflow: hidden;
+   background-color: #333;
+  }
