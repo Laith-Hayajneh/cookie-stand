@@ -1,23 +1,11 @@
-h1 {text-align: center;
-    font-size: 40px;}
-  /* 
-p {text-align: center;
-    color: rgb(223, 232, 241);
-    border: 3px rgb(247, 243, 22);
-    font-size: 30px;
- 
-table {
-  border: 5px solid red;
+h1 {
+  text-align: center;
+  color: white;
+  font-family: 'Lobster', cursive;
+  font-size: 40px;
+  display: inline;
+}
 
-}
-table,
-td,
-th {
-  border: 3px solid rgb(75, 32, 177);
-}
-tr,td2 {
-  border: 4px solid green ;
-} */
 #table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -29,9 +17,13 @@ tr,td2 {
   padding: 8px;
 }
 
-#table tr:nth-child(even){background-color: #f2f2f2;}
+#table tr:nth-child(even) {
+  background-color: #f2f2f2;
+}
 
-#table tr:hover {background-color: #ddd;}
+#table tr:hover {
+  background-color: #ddd;
+}
 
 #table th {
   padding-top: 12px;
@@ -39,4 +31,90 @@ tr,td2 {
   text-align: left;
   background-color: #4CAF50;
   color: white;
+}
+
+table {
+  background-color: wheat;
+  border: solid yellow;
+  margin: 200px;
+}
+
+ul {
+  list-style-type: none;
+  margin: 0;
+  padding: 0;
+  overflow: hidden;
+  background-color: #333;
+}
+
+li {
+  float: left;
+  border-right: 1px solid #bbb;
+  margin-left: 4px;
+}
+
+li:last-child {
+  border-right: none;
+}
+
+li a {
+  display: block;
+  color: white;
+  text-align: center;
+  padding: 14px 16px;
+  text-decoration: none;
+  float: left;
+  font-size: 17px;
+  width: 25%;
+  /* Four links of equal widths */
+}
+
+li a:hover:not(.active) {
+  background-color: #111;
+}
+
+.active {
+  background-color: #4CAF50;
+}
+
+#salm {
+  background-color: transparent;
+  margin-left: 300px;
+}
+
+img {
+  margin-left: 50px;
+  margin-right: auto;
+  width: auto
+}
+
+#fam {
+  margin-left: 300px;
+  display: inline-block;
+}
+
+div {
+  display: inline;
+}
+
+#wheel {
+  display: inline-block;
+  width: 200px;
+  vertical-align: middle;
+  transition: all ease-in-out 3s;
+}
+
+h2 {
+  display: inline;
+  margin-left: 500px;
+  color: rgb(131, 226, 226);
+  background-color: rgb(70, 13, 70);
+  font-size: 40px;
+  text-align: center;
+}
+
+#section1 {
+  background-color: rgb(2, 2, 2);
+  text-align: center;
+  color: antiquewhite;
 }
