@@ -1,4 +1,5 @@
 'use strict';
+let totalOfTotal = 0;
 let hours = [
     "6am",
     "7am",
@@ -31,6 +32,7 @@ function Store(storename, minCustPerHour, maxCustPerHour, avgCustCookies) {
 
 }
 console.log(StoreArray);
+
 Store.prototype.randomCustNumber = function () {
     for (let hour = 0; hour < hours.length; hour++) {
         this.randomCustPerHour.push(Math.floor(Math.random() * (this.maxCustPerHour - this.minCustPerHour + 1) + this.minCustPerHour));
@@ -42,9 +44,11 @@ Store.prototype.salesCookies = function () {
     for (let i = 0; i < hours.length; i++) {
         this.salesPerHour.push(Math.ceil(this.randomCustPerHour[i] * this.avgCustCookies));
         this.totalPerHour += this.salesPerHour[i];
+        // totalOfTotal+= totalOfTotal + this.totalPerHour;
+        // console.log(totalOfTotal);
+
     }
 };
-
 let container = document.getElementById('table');
 let table = document.createElement('table');
 
@@ -70,6 +74,7 @@ function header() {
 
 
 }
+
 function footer() {
     let f1 = document.createElement('tr');
     table.appendChild(f1);
@@ -80,8 +85,10 @@ function footer() {
 
 
 
+
     for (let i = 0; i < hours.length; i++) {
         let sumTotal = 0;
+        let footerTotal = 0;
 
         for (let s = 0; s < StoreArray.length; s++) {
 
@@ -93,20 +100,21 @@ function footer() {
         f1.appendChild(t2);
         t2.textContent = sumTotal;
 
-        // 
+
+        totalOfTotal += sumTotal;
     }
     // this is final of final
-    let toos =0;
-   
+
     let td10 = document.createElement('td');
     f1.appendChild(td10);
-    // td10.textContent = this.totalCookiesSold;
-    
+    console.log();
+    td10.textContent = totalOfTotal;
+
 }
 
 Store.prototype.render = function () {
 
-    
+
 
     container.appendChild(table);
 
@@ -133,6 +141,7 @@ Store.prototype.render = function () {
 
     let tableContent = document.createElement('tr');
     table.appendChild(tableContent);
+    totalOfTotal += this.totalAmount;
 
 
 
@@ -179,12 +188,34 @@ let Lima = new Store('Lima', 2, 16, 4.6);
 Lima.randomCustNumber();
 Lima.salesCookies();
 Lima.render();
+
+
+
+
+let StoreForm = document.getElementById('storeForm');
+StoreForm.addEventListener('submit', addAStore);
+
+function addAStore(event) {
+    event.preventDefault();
+    let storename = event.target.storeName.value;
+    let minCustPerHour = parseInt(event.target.minCustPerHour.value);
+    let maxCustPerHour = parseInt(event.target.maxCustPerHour.value);
+    let avgCustCookies = parseFloat(event.target.avgCustCookies.value);
+    console.log(storename, minCustPerHour, maxCustPerHour, avgCustCookies);
+    let newStore = new Store(storename, minCustPerHour, maxCustPerHour, avgCustCookies)
+    newStore.randomCustNumber();
+    newStore.salesCookies();
+    newStore.render();
+    console.log(newStore);
+    // table.innerHTML=""
+    // table.removeChild(5)
+    footer();
+    // f1.innerHTML="";
+
+
+}
+
 footer();
-
-
-
-
-
 
 
 

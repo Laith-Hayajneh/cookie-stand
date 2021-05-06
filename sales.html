@@ -15,11 +15,15 @@
 </head>
 
 <body>
-   
-    <nav class="top">
-      <h1>Sales</h1>
 
-        <ul> 
+
+
+
+
+    <nav class="top">
+        <h1>Sales</h1>
+
+        <ul>
 
             <li><a href="./index.html" title="Home Page">Home</a></li>
             <li><a href="./sales.html" title="Sales Data">Sales</a></li>
@@ -27,8 +31,28 @@
         </ul>
     </nav>
     <main>
+        <form action="" id="storeForm">
+            <fieldset>
+                <!-- name ,min ,max ,avg -->
+                <legend>Adding new Store</legend>
+
+                <label for="storeName"> storeName</label>
+                <input id="storeName" name="storeName" type="text" placeholder="type the name ">
+
+                <label for="minCustPerHour"> minCustPerHour</label>
+                <input id="storminCustPerHoureName" name="minCustPerHour" type="number" placeholder="minCustPerHour ">
+
+                <label for="maxCustPerHour"> maxCustPerHour</label>
+                <input id="maxCustPerHour" name="maxCustPerHour" type="number" placeholder="maxCustPerHour ">
+
+                <label for="avgCustCookies"> avgCustCookies</label>
+                <input id="avgCustCookies" name="avgCustCookies" type="number" placeholder="avgCustCookies">
+
+                <input type="submit" value="add a store">
 
 
+            </fieldset>
+        </form>
 
 
         <div id="table">
