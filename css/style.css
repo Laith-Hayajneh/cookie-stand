@@ -147,3 +147,13 @@ form {
   width:80vw;
   float: left;
 }
+#storeForm {
+  border: solid 5px white;
+  margin: auto;
+  width: 75%;
+  padding: 17px;
+  align-content: center;
+  border-radius: 7px;
+  word-spacing: 2px;
+
+}
