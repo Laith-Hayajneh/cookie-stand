@@ -6,6 +6,61 @@ h1 {
   display: inline;
 }
 
+span{
+  font-size: 20px;
+  margin-bottom: 50px;
+background-color: #ddd;
+}
+.shirt {
+  position: -webkit- sticky;
+  position: sticky;
+  top: 0;
+  width: 200px;
+  height: 200px;
+  /* float: right; */
+  
+ 
+}
+.shirt:hover{
+  animation: shake 0.5s;
+  animation-iteration-count: infinite;
+}
+@keyframes shake {
+  0% {
+    transform: translate(1px, 1px) rotate(0deg);
+  }
+  10% {
+    transform: translate(-1px, -2px) rotate(-1deg);
+  }
+  20% {
+    transform: translate(-3px, 0px) rotate(1deg);
+  }
+  30% {
+    transform: translate(3px, 2px) rotate(0deg);
+  }
+  40% {
+    transform: translate(1px, -1px) rotate(1deg);
+  }
+  50% {
+    transform: translate(-1px, 2px) rotate(-1deg);
+  }
+  60% {
+    transform: translate(-3px, 1px) rotate(0deg);
+  }
+  70% {
+    transform: translate(3px, 1px) rotate(-1deg);
+  }
+  80% {
+    transform: translate(-1px, -1px) rotate(1deg);
+  }
+  90% {
+    transform: translate(1px, 2px) rotate(0deg);
+  }
+  100% {
+    transform: translate(1px, -2px) rotate(-1deg);
+  }
+}
+
 #table {
   font-family: Arial, Helvetica, sans-serif;
   border-collapse: collapse;
@@ -80,8 +135,13 @@ li a:hover:not(.active) {
 #salm {
   background-color: transparent;
   margin-left: 300px;
+  
 }
 
+#salm:hover{
+  -webkit-transform: scaleX(-1);
+  transform: scaleX(-1);
+}
 img {
   margin-left: 50px;
   margin-right: auto;
@@ -102,6 +162,10 @@ div {
   width: 200px;
   vertical-align: middle;
   transition: all ease-in-out 3s;
+
+}
+#wheel:hover{
+  transform: rotate(180deg);
 }
 
 h2 {
@@ -128,25 +192,30 @@ fieldset {
   border-radius: 7px;
   word-spacing: 2px;
 }
+
 label {
   display: block;
   font-size: 1.1em;
   font-family: oswald;
   color: white;
 }
+
 button {
   display: block;
   margin: 0 auto;
 }
+
 label, input {
   margin: 5px;
 }
+
 form {
   margin-top: 25px;
   padding-bottom: 15px;
-  width:80vw;
+  width: 80vw;
   float: left;
 }
+
 #storeForm {
   border: solid 5px white;
   margin: auto;
@@ -155,5 +224,4 @@ form {
   align-content: center;
   border-radius: 7px;
   word-spacing: 2px;
-
 }

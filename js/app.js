@@ -1,5 +1,4 @@
 'use strict';
-let totalOfTotal = 0;
 let hours = [
     "6am",
     "7am",
@@ -52,6 +51,7 @@ Store.prototype.salesCookies = function () {
 let container = document.getElementById('table');
 let table = document.createElement('table');
 
+container.appendChild(table);
 
 
 
@@ -76,8 +76,11 @@ function header() {
 }
 
 function footer() {
+    let tFooter =document.createElement('tfoot');
+    table.appendChild(tFooter);
+
     let f1 = document.createElement('tr');
-    table.appendChild(f1);
+    tFooter.appendChild(f1);
 
     let td1 = document.createElement('td');
     f1.appendChild(td1);
@@ -85,15 +88,19 @@ function footer() {
 
 
 
+    let totalOfTotal ;
 
     for (let i = 0; i < hours.length; i++) {
         let sumTotal = 0;
         let footerTotal = 0;
+        totalOfTotal =0;
+
 
         for (let s = 0; s < StoreArray.length; s++) {
 
             sumTotal += StoreArray[s].salesPerHour[i];
-
+            totalOfTotal += StoreArray[s].totalAmount
+            console.log(StoreArray);
 
         }
         let t2 = document.createElement('td')
@@ -101,7 +108,7 @@ function footer() {
         t2.textContent = sumTotal;
 
 
-        totalOfTotal += sumTotal;
+        // totalOfTotal += sumTotal;
     }
     // this is final of final
 
@@ -116,7 +123,6 @@ Store.prototype.render = function () {
 
 
 
-    container.appendChild(table);
 
     let tableHeader = document.createElement('tr');
     table.appendChild(tableHeader);
@@ -141,7 +147,8 @@ Store.prototype.render = function () {
 
     let tableContent = document.createElement('tr');
     table.appendChild(tableContent);
-    totalOfTotal += this.totalAmount;
+    // totalOfTotal += this.totalAmount;
+
 
 
 
@@ -190,6 +197,7 @@ Lima.salesCookies();
 Lima.render();
 
 
+footer();
 
 
 let StoreForm = document.getElementById('storeForm');
@@ -203,19 +211,24 @@ function addAStore(event) {
     let avgCustCookies = parseFloat(event.target.avgCustCookies.value);
     console.log(storename, minCustPerHour, maxCustPerHour, avgCustCookies);
     let newStore = new Store(storename, minCustPerHour, maxCustPerHour, avgCustCookies)
+    table.deleteTFoot();
+
     newStore.randomCustNumber();
+
     newStore.salesCookies();
     newStore.render();
     console.log(newStore);
     // table.innerHTML=""
     // table.removeChild(5)
+
+
     footer();
     // f1.innerHTML="";
 
 
+
 }
 
-footer();
 
 
 
@@ -574,7 +587,7 @@ footer();
 //         let container = document.getElementById('sales');
 //         let h2El = document.createElement('h2');
 //         container.appendChild(h2El);
-//         h2El.textContent = this.storeName;
+//         h2El.textContent = this.storeName;   
 //         let ulEl = document.createElement('ul');
 //         container.appendChild(ulEl);
 //         for (let hour = 0; hour < hours.length; hour++) {
